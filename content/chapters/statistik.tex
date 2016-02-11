@@ -1,0 +1,409 @@
+\chapter{Statistik}
+\section{Häufigkeiten}
+\begin{table}[h]
+	\begin{tabular}{lll}
+		Variable & Formel & Bedeutung\\
+		\toprule
+		$n_j$ & & absolute Häufigkeit\\
+		$N$ & $\sum\limits_j n_j$ & Anzahl Messdaten\\
+		$h_j$ & $\frac{n_j}{N}$ & relative Häufigkeit, $\sum\limits_j h_j = 1$\\
+		$N_j$ & $\sum\limits_{k=1}^{j} n_k$ & absolute Summenhäufigkeit\\
+		$H_j$ & $\sum\limits_{k=1}^{j} h_k$ & relative Summenhäufigkeit, $\sum\limits_j H_j = 1$\\
+	\end{tabular}
+\end{table}
+
+\section{Klassische Wahrscheinlichkeit}
+\begin{equation}
+P(A) = \frac{|A|}{|\Omega|} = \frac{\text{Anzahl günstiger Fälle}}{\text{Anzahl möglicher Fälle}}
+\end{equation}
+
+\section{Permutationen}
+Eine Anordnung von $n$ Elementen in einer bestimmten Reihenfolge heißt Permutation.
+
+Für die Anzahl gilt:
+\begin{equation}
+	P(n) = n!
+\end{equation}
+
+Sind $n_1, n_2, n_3, \dots, n_k$ Elemente jeweils einander gleich:\\
+\begin{equation}
+	P(n; n_1,n_2,\dots,n_k) = \frac{n!}{n_1!\cdot n_2!\dots n_k!}
+\end{equation}
+
+\section{Kombinatorik}
+\begin{table}[h]
+	\begin{tabular}{l|ll}
+				& Ohne Zurücklegen & Mit Zurücklegen \\
+		\toprule
+		geordnet	& $N=\frac{n!}{(n-k)!}$ & $N=n^k$\\
+		\midrule
+		ungeordnet	& $N=\binom{n}{k}=\frac{n!}{(n-k)!k!}$ & $N=\binom{n+k-1}{k}$
+	\end{tabular}
+	\caption{Entscheidungstabelle Wahrscheinlichkeiten}
+\end{table}
+
+\section{Variablen}
+\begin{table}[h]
+	\begin{tabular}{lll}
+		Variable & Bedeutung & Beispiel\\
+		\toprule
+		$n$ & Größe der Grundgesamtheit & Kugeln in der Urne\\
+		$k$ & Größe der Stichprobe & gezogene Kugeln\\
+		$N$ & Anzahl der möglichen Kombinationen & Ergebnis
+	\end{tabular}
+	\caption{Variablen}
+\end{table}
+
+\section{Rechenregeln der Wahrscheinlichkeit}
+\begin{align*}
+	& P(\emptyset) = \frac{|\emptyset|}{|\Omega|}=0\\
+	& P(\Omega) = \frac{|\Omega|}{|\Omega|}=1\\
+	& \Rightarrow  0\leq P(A) \leq 1\\
+	& P(A\cup B) = P(A)+P(B)-P(A\cap B)\\
+	& P(A)+P(\bar{A}) =1\\
+	& P(A\cup B) = P(A) + P(B) \Leftrightarrow A\cup B = \emptyset
+\end{align*}
+
+\section{Bedingte Wahrscheinlichkeit und Unabhängigkeit}
+\begin{equation}
+	P(A|B) = \frac{P(A\cap B)}{P(B)}
+\end{equation}
+\begin{equation}
+	P(A\cap B)=P(A|B)\cdot P(B)
+\end{equation}
+\begin{equation}
+	P(A\cap B)=P(B|A)\cdot P(A)
+\end{equation}
+$\Rightarrow$ Multiplikationssatz:
+\begin{equation}
+	P(A|B)\cdot P(B) = P(B|A)\cdot P(A)
+\end{equation}
+\begin{equation}
+	P(A\cap B) = P(A)\cdot P(B) \Rightarrow \text{A unabhängig von B}
+\end{equation}
+
+\section{Totale Wahrscheinlichkeit}
+\subsection{Voraussetzungen}
+\begin{equation*}
+	B_i \cap B_j = \emptyset\\
+\end{equation*}
+\begin{equation*}
+	B_1 \cup \dots \cup B_n = \Omega
+\end{equation*}
+\begin{equation*}
+	A \subseteq \Omega
+\end{equation*}
+
+\subsection{Formel}
+\begin{equation}
+	P(A) = P(A|B_1)\cdot P(B_1) + P(A|B_2) \cdot P(B_2) + \dots + P(A|B_n)\cdot P(B_n)
+\end{equation}
+
+\subsection{Pfadregeln}
+Parallel verlaufende Pfade werden addiert, hintereinander folgende Pfade multipliziert.\\
+Beispiel:\\
+Maschine, 3 Bauteile, 2 davon parallel zueinander, danach das dritte. Die Ausfallwahrscheinlichkeiten der beiden ersten werden addiert, dann mit der Ausfallwahrscheinlichkeit des dritten multipliziert um die Ausfallwahrscheinlichkeit der gesamten Maschine zu berechnen.
+
+\clearpage
+
+\section{Bayes}
+\subsection{Voraussetzungen}
+\begin{equation*}
+	B_i \cap B_j = \emptyset\\
+\end{equation*}
+\begin{equation*}
+	B_1 \cup \dots \cup B_n = \Omega
+\end{equation*}
+\begin{equation*}
+	A \subseteq \Omega
+\end{equation*}
+
+\subsection{Formel}
+\begin{equation}
+	P(B_k|A) = \frac{P(A|B_k)\cdot P(B_k)}{\sum\limits_{k=1}^n P(A|B_k) \cdot P(B_k)}
+\end{equation}
+
+\section{Zufallsvariable}
+Sei $\omega \in \Omega$ ein Elementarereignis. Dann ist $X(\omega)$ Zufallsvariable. $X(\omega)$ hängt von der Fragestellung ab.
+
+\section{Wahrscheinlichkeitsdichte}
+\begin{equation}
+	f(x) = P(X = x)
+\end{equation}
+
+\section{Diskrete ZV}
+Die aufsummierte Wahrscheinlichkeitsdichte heißt Verteilungsfunktion $F(x)$\\
+Erwartungswert $\mu$:
+\begin{align}
+	& \mu = E(X) = \sum_i x_i \cdot f(x_i)\\
+	& E(nX) = nE(X)\\
+	& E(X_1 + X_2) = E(X_1) + E(X_2)
+\end{align}
+
+Fairness:\\
+Ist der Erwartungswert $E(X) = 0$ gilt beispielsweise ein Würfelspiel als fair.\\
+
+
+Varianz $\sigma^2$:
+\begin{align}
+	& \sigma^2 = \mathrm{Var}(X)=\sum_i(x_i-\mu)^2\cdot f(x_i) = \sum_i x_i^2f(x_i)-\mu^2\\
+	& \mathrm{Var}(nX) = n^2\mathrm{Var}(X)\\
+	& \mathrm{Var}(nX_1+mX_2) = n^2\mathrm{Var}(X_1) + m^2\mathrm{Var}(X_2)
+\end{align}
+
+Standardabweichung $\sigma$:
+\begin{equation}
+	\sigma = \sqrt{\sigma^2}
+\end{equation}
+
+\clearpage
+
+\section{Stetige ZV}
+Erwartungswert $\mu$:
+\begin{equation}
+	\mu = \int_{-\infty}^{\infty}xf(x)\mathrm{d}x\\
+\end{equation}
+Varianz $\sigma^2$:
+\begin{equation}
+	\sigma^2 = \int_{-\infty}^{\infty}x^2f(x)\mathrm{d}x-\mu^2\\
+\end{equation}
+Standardabweichung $\sigma$:
+\begin{equation}
+	\sigma = \sqrt{\sigma^2}
+\end{equation}
+\begin{align}
+	P(X\leq a) &= F(a)\\
+	P(X > a) &= 1 - F(a)\\
+	P(a < X < b) &= F(b) - F(a)
+\end{align}
+
+Außerdem gilt:
+\begin{align}
+	F(-\infty) &= 0\\
+	F(\infty) &= 1\\
+	\int_{-\infty}^\infty\!f(x)\, \mathrm{d}x &= 1
+\end{align}
+
+\clearpage
+
+\section{Verteilungen}
+\subsection{Binomialverteilung}
+\large{Ziehen mit Zurücklegen, Bernoulli-Experiment}\\
+Diskrete Dichte:
+\begin{equation}
+	P(X=k) = \binom{n}{k}p^k(1-p)^{n-k}
+\end{equation}
+
+Erwartungswert:
+\begin{equation}
+	\mu = E(X) = np
+\end{equation}
+
+Varianz:
+\begin{equation}
+	\text{Var}(X)=np(1-p)
+\end{equation}
+
+Approximation durch Poisson-Verteilung:
+\begin{align*}
+	& \text{Faustregel} \\
+	& np \leq 10 \text{ und} \\
+	& n \geq 1500p \Rightarrow Ps(\mu = np) 
+\end{align*}
+
+Approximation durch Normalverteilung:
+\begin{align*}
+	& \text{Faustregel} \\
+	& np(1-p) > 9 \Rightarrow N(\mu = np; \sigma = \sqrt{np(1-p)} 
+\end{align*}
+
+Anwendungsbeispiel:\\
+Würfelspiel, 3 Würfel, einer davon zeigt die gewünschte Augenzahl:\\
+\begin{equation}
+	\binom{3}{1}\cdot\left(\frac{1}{6}\right)^1\cdot\left(1-\frac{1}{6}\right)^2
+\end{equation}
+
+\begin{table}[h]
+	\begin{tabular}{ll}
+		Variable & Erklärung\\
+		\toprule
+		$n$ & Anzahl Würfel\\
+		$k$ & Anzahl Treffer (günstiges Ereignis)\\
+		$p$ & Wahrscheinlichkeit einer bestimmten Augenzahl
+	\end{tabular}
+\end{table}
+
+\clearpage
+
+\subsection{Hypergeometrische Verteilung}
+\large{Ziehen ohne Zurücklegen}\\
+Diskrete Dichte:
+\begin{equation}
+	P(X=k)=\frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}}
+\end{equation}
+
+Erwartungswert:
+\begin{equation}
+	\mu = E(X)= n\frac{M}{N}
+\end{equation}
+
+Varianz:
+\begin{equation}
+	\mathrm{Var}(X)=n\frac{M}{N}\left(1-\frac{M}{N}\right)\left(\frac{N-n}{N-1}\right)
+\end{equation}
+
+Approximation durch Binomialverteilung
+\begin{align*}
+	& \text{Faustregel} \\
+	& 0,1 < \frac{M}{N} < 0,9 \\
+	& n < 0,05N, n >10 \Rightarrow B\left(n;p = \frac{M}{N}\right) 
+\end{align*}
+
+Approximation durch Poisson-Verteilung
+\begin{align*}
+	& \text{Faustregel} \\
+	& \frac{M}{N}\leq 0,1 \text{ oder } \frac{M}{N}\geq 0,9 \\
+	& n < 0,05N, n > 30 \Rightarrow Ps\left(\mu = n\frac{M}{N}\right) 
+\end{align*}
+
+Approximation durch Normalverteilung
+\begin{align*}
+	& \text{Faustregel}  \\
+	& 0,1 < \frac{M}{N} < 0,9  \\
+	& n < 0,05N, n > 30 \Rightarrow N\left(\mu = n\frac{M}{N}; \sigma = \sqrt{n\frac{M}{N}\left(1-\frac{M}{N}\right)\frac{N-n}{N-1}}\right) 
+\end{align*}
+
+Anwendungsbeispiel:\\
+N Kugeln, M davon rot, n Kugeln werden gezogen, P ist die Wahrscheinlichkeit, dass von n Kugeln genau k rot sind.
+
+\subsection{Poissonverteilung}
+\large{Mehrstufiges Bernoulli-Experiment}\\
+Diskrete Dichte:
+\begin{equation}
+	P(X=k)=\frac{\lambda^k}{k!}\e^{-\lambda}
+\end{equation}
+
+Erwartungswert:
+\begin{equation}
+	\mu = E(X) = \lambda
+\end{equation}
+
+Varianz:
+\begin{equation}
+	\mathrm{Var}(X)=\lambda
+\end{equation}
+
+Approximation durch Normalverteilung
+\begin{align*}
+	& \text{Faustregel} \\
+	& \mu > 10 \Rightarrow N(\mu; \sigma = \sqrt{\mu}) 
+\end{align*}
+
+Anwendungsbeispiel:\\
+Blitze pro Stunde pro $\mathrm{km}^2$, P ist die Wahrscheinlichkeit, dass ein Ereignis k-mal eintritt, wobei es im Mittel $\lambda$-mal eintritt.
+
+\clearpage
+
+\subsection{Normalverteilung}
+Dichtefunktion der NV mit $\mu$ und $\sigma^2$:
+\begin{equation}
+	f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}\e^{-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}}
+\end{equation}
+
+Verteilungsfunktion:
+\begin{equation}
+	F(x) = \int_{-\infty}^xf(t)\mathrm{d}t
+\end{equation}
+
+Da $f(x)$ sich nicht integrieren lässt, lässt sich $F(x)$ nicht analytisch berechnen. Ausweichen auf die Standardnormalverteilung $\Phi(z)$ samt Tabelle.
+
+Standardnormalverteilung hat $\mu=0$ und $\sigma^2=1$.\\
+Dichtefunktion:
+\begin{equation}
+	\Phi(z) = \frac{1}{\sqrt{2\pi}}\e^{-\frac{1}{2}x^2}
+\end{equation}
+
+Berechnung von Wahrscheinlichkeiten mit der NV:\\
+\begin{align}
+	\begin{rcases}
+		X \text{ sei } N(\mu, \sigma^2)\text{-verteilt} &\\
+		Z \text{ sei } N(0,1)\text{-verteilt} &
+	\end{rcases} \text{Umrechnungsformel: } z=\frac{x-\mu}{\sigma}
+\end{align}
+
+\begin{align}
+	P(X < a) &= F(a) = \Phi\left(\frac{a-\mu}{\sigma}\right)\\
+	P(X > a) &= 1-F(a) = 1-\Phi\left(\frac{a-\mu}{\sigma}\right)\\
+	P(a < X < b) &= F(b) - F(a) = \Phi\left(\frac{b-\mu}{\sigma}\right) - \Phi\left(\frac{a-\mu}{\sigma}\right)
+\end{align}
+
+\subsection{Quantile}
+Quantile der Normalverteilung:\\
+$x_{0,95}$ heißt 95\%-Quantil.\\
+Es gilt: $P(X < x_{0,95}) = F(X_{0,95}) = 0,95$.\\
+
+Quantile der Standardnormalverteilung:\\
+$z_{0,8}, z_{0,95}\dots$ siehe Tabelle.\\
+
+Umrechnung:\\
+$x_{0,95} = \mu +\sigma\cdot z_{0,95}$\\
+
+Zu beachten: $\alpha=$Signifikanzniveau (Irrtumswahrscheinlichkeit).\\
+Schreibweise: $x_{1-\alpha}=\mu+\sigma\cdot z_{1-\alpha}$
+
+\section{Zufallsstreubereiche}
+95\%-ZSB: Intervall, in dem $X$ mit 95\%-iger Wahrscheinlichkeit liegt.
+
+\begin{itemize}
+	\item zweiseitiger ZSB: $\left[\mu-z_{1-\frac{\alpha}{2}}\sigma; \mu+z_{1-\frac{\alpha}{2}}\sigma\right]$
+	\item einseitiger, nach oben beschränkter ZSB: $(-\infty;\mu+z_{1-\alpha}\sigma]$
+	\item einseitiger, nach unten beschränkter ZSB: $[\mu-z_{1-\alpha}\sigma; \infty)$
+\end{itemize}
+
+\section{Zufallsstreubereich für $\bar{X}$}
+
+\begin{itemize}
+	\item zweiseitiger ZSB: $\left[\mu-z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}; \mu+z_{1-\frac{\alpha}{2}}\frac{\sigma}{\sqrt{n}}\right]$
+	\item einseitiger, nach oben beschränkter ZSB: $(-\infty;\mu+z_{1-\alpha}\frac{\sigma}{\sqrt{n}}]$
+	\item einseitiger, nach unten beschränkter ZSB: $[\mu-z_{1-\alpha}\frac{\sigma}{\sqrt{n}}; \infty)$
+\end{itemize}
+
+\section{Schließende Statistik}
+\subsection{Punktschätzer}
+Es liegt eine Messreihe $X_1, X_2, \dots, X_n$ vor.
+
+\begin{table}[ht!]
+	\begin{tabular}{ll}
+		Unbekannter Parameter & Punktschätzer\\
+		\toprule
+		Wahrscheinlichkeit $p$ & $\hat{p}=\frac{k}{n}\dots$ relative Häufigkeit\\
+		Erwartungswert $\mu$ & $\hat{\mu}=\bar{x}\dots$ arithmetisches Mittel\\
+		Varianz $\sigma^2$ & $\hat{\sigma}^2 = s^2\dots$ empirische Varianz\\
+		Standardabweichung $\sigma$ & $\hat{\sigma} = s\dots$ empirische Standardabweichung
+	\end{tabular}
+	\caption{Punktschätzer}
+\end{table}
+
+\subsection{Statistische Tests}
+Ablauf:
+\begin{itemize}
+	\item Formulierung einer Nullhypothese $H_0$ und der zugehörigen Alternativhypothese $H_1$
+	\item Wahl des Signifikanzniveaus $\alpha$
+	\item ZSB wird nach Tabelle je nach Testart berechnet
+	\item Testentscheidung, wenn $\bar{x}\notin\mathrm{ZSB}\Rightarrow H_0$ wird verworfen $\Rightarrow H_1$ gilt als bestätigt, mit Irrtumswahrscheinlichkeit $\alpha$, wenn $\bar{x}\in\mathrm{ZSB}\Rightarrow$ keine Aussage möglich
+\end{itemize}
+
+\subsection{Konfidenzintervalle}
+Konfidenzintervalle bzw. Vertrauensbereiche sind Intervalle, in denen $\mu$ (Fälle A \& B), $\mu_1-\mu_2$ (Fall C) bzw. $p$ (Fall D) mit der Wahrscheinlichkeit $1-\alpha$ liegt. Es gibt zweiseitige, einseitig unten und einseitig oben beschränkte Konfidenzintervalle.
+
+\clearpage
+
+\input{content/chapters/Statistik_Formelblatt_beschreibende_Statistik}
+
+\clearpage
+
+\input{content/chapters/Statistik_Tests}
+
+\clearpage
+
+\input{content/chapters/Statistik_Vertrauensbereiche}

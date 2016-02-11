@@ -1,0 +1,79 @@
+%% Ableitungs und Integral
+\chapter{Grundlagen}
+\section{Ableitungsregeln}
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\textwidth}{llcl}
+\textbf{Summenregel} & $f(x) = u(x) + n(x)$ &  $\Rightarrow$ &  $f'(x) = u'(x) + n'(x)$	 \\
+\textbf{Produktregel} & $f(x) = u(x) \cdot n(x)$	 &  $\Rightarrow$	 &  $f'(x) = u'(x) \cdot n(x) + u(x) \cdot n'(x)$	 \\
+\textbf{Produktregel} & $f(x) = u(x) \cdot v(x) \cdot w(x)$ &  $\Rightarrow$ &  $f'(x) = u'(x) \cdot v(x) \cdot w(x) + $\\
+\textbf{für 3 Produkte}	 &  &  &  $u(x) \cdot v'(x) \cdot w(x) + $\\
+ &  &  & $u(x) \cdot v(x) \cdot w'(x)$ \\
+\textbf{Quotientenregel} & $f(x) = \frac{u(x)}{n(x)}$ &  $\Rightarrow$ &  $f'(x) = \frac{u'(x) \cdot n(x) - u(x) \cdot n'(x)}{(n(x))^2}$ \\
+\textbf{Kettenregel} & $f(x) = n(u(x))$ &  $\Rightarrow$	 &  $f'(x) = n'(u(x)) \cdot u'(x)$ \\ 
+\multicolumn{4}{r}{\text{innere Ableitung mal äußere Ableitung}}\\
+\textbf{Bestimmtes Ingeral} &  &  $\Rightarrow$ &  $\int\limits_{a}^b f(x) \, \mathrm{d}x = F(b) - F(a)$
+\end{tabularx}
+\label{tab:ableitungsregeln}
+\caption{Ableitungsregeln und Vorgehen}
+\end{table}
+ 
+\section{Wichtige Integrale}
+\begin{align*}
+\int f(x)\cdot g(x) \mathrm{d}x & =f(x)g(x)-\int f'(x)g(x)\mathrm{d}x
+\end{align*}
+Beispiel:
+\begin{align*}
+\int t\cdot e^{-j2\pi ft}\mathrm{d}t & =\frac{1}{-j2\pi f}\cdot\int t\cdot e^{-j2\pi ft}\mathrm{d}t=\frac{1}{-j2\pi f}\left[\left[t\cdot e^{-j2\pi ft}\right]-\int 1\cdot e^{-j2\pi ft}\mathrm{d}t\right]
+\end{align*}
+
+\begin{table}[!ht]
+\centering
+\begin{tabular}{l | c | c}
+	$f(x)$ & $f'(x)$ & $\int f(x)\, \mathrm{d}x$ 	\\ 
+	\toprule
+	$x^n$ & $n \cdot x^{n-1}$ & $\begin{cases} \frac{1}{n+1} \cdot x^{n+1} + C  & \text{, für } n\neq -1 \\ ln|x| + C  &  \text{, für }n=-1 \end{cases}$ \\
+	\midrule
+	$e^x$ & $e^x$ & $e^x + C$ \\
+	\midrule
+	$e^{ax}$ &  $ae^{ax}$ & $\frac1a \cdot e^{ax}$ \\
+	\midrule
+	$\ln x$	& $\frac1x$ & $x(\ln((x)-1)) + C$ \\
+	\midrule
+	$\sin x$ & $\cos x$ & $-\cos(x) +C $\\
+	\midrule
+	$\cos x$ & $-\sin x$ & $\sin x$ \\
+	\midrule
+	$\frac{A}{(x-x_0)^n}$ & $\frac{-An(x-x_0)^{n-1}}{(x-x_0)^{2n}}$ &  $\begin{cases} A \cdot \ln |x-x_0| + C  &  \text{, für }n=1 \\ A \cdot \frac{1}{-n+1} \cdot \frac{1}{(x-x_0)^{n-1}}  & \text{, für}n>1	\end{cases} $\\
+	\midrule
+	$\e^{at}\sin(bt)$ & $a\e^{at}\sin(bt)+b\e^{at}\cos(bt)$ & $\frac{\e^{at}}{a^2+b^2}(a\sin(bt)-b\cos(bt))$\\
+	\midrule
+	$t\e^{at}$ & $\e^{at}+at\e^{at}$ & $\e^{at}(t-1)$
+\end{tabular}
+\caption{Wichtige Integrale und Ableitungen}
+\end{table}
+
+\section{Partialbruchzerlegung}
+Bedingung: Nennergrad > Zählergrad, sonst ist eine Polynomdivision nötig.
+
+Ansatz am Beispiel:
+\begin{equation}
+	\frac{3x^2-1}{(x-2)^2(x+3)x^3} = \frac{A}{x-2} + \frac{B}{(x-2)^2} + \frac{C}{x+3} + \frac{D}{x} + \frac{E}{x^2} + \frac{F}{x^3}
+\end{equation}
+
+Wenn der Nenner komplexe Nullstellen besitzt ist eine andere Zerlegung nötig, auch hier wieder ein Ansatz am Beispiel:
+\begin{equation}
+	f(x)=\frac{e^{-2x}}{(x+1)\cdot(x^2-2x+2)}=\frac{A}{x+1}+\frac{Bx+C}{x^2-2x+2}
+\end{equation}
+
+Jetzt werden A, B,$\dots$, F mit Hilfe von Nullstellen und Koeffizientenvergleich ermittelt. 
+Sobald die Koeffizienten ermittelt sind kann die Rücktransformation erfolgen, die Regeln hierzu siehe Kapitel Laplace-Transformation bzw. z-Transformation.
+
+\section{Quadratische Ergänzung}
+
+\begin{align}
+	a\cdot x^2 + b\cdot x +c\\
+	\text{umformen zu}\\
+	a \cdot \left( x + \left( \frac{b}{2\cdot a} \right)\right)^2 + c -a \cdot\left(\frac{b}{2\cdot a}\right)^2
+\end{align}

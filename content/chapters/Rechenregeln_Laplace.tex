@@ -1,0 +1,61 @@
+\section{Die Laplacetransformation}
+\begin{align*}
+\begin{array}{rcl}
+F(p) & = & \int_{0}^{\infty} \, f(t) \cdot \e^{-pt} dt\\ 
+f(t) & = & \frac{1}{j 2 \pi} \int_{p=\alpha-j \cdot \infty}^{p=\alpha +j \cdot \infty} \, F(p) \cdot \e^{pt} dp\\ 
+\end{array}
+\end{align*}
+
+\section{Regeln Laplacetransformation}
+
+\begin{align*}
+\begin{array}{lrcl}
+	\mbox{} & f(t) & \laplace & F(p)\\
+\mbox{Linearität:} & \sigma(t) \cdot (a_1 f_1(t) + a_2 f_2(t)) & \laplace & a_1 F_1(p) + a_2 F_2(p) \\
+\mbox{Ähnlichkeitssatz:} & \sigma(t) \cdot f(at); \quad a>0  & \laplace & \frac{1}{a} \cdot F(\frac{p}{a}) \\
+\mbox{Verschiebungssatz:} & f(t-a) \cdot \sigma(t-a); \quad a>0  & \laplace & \e^{-ap} \cdot F(p)\\
+\mbox{Dämpfungssatz:} & \sigma(t) \cdot \e^{-at} \cdot f(t) & \laplace & F(p+a)\\
+\mbox{1. Differentiationssatz:} & \sigma(t) \cdot f'(t) & \laplace & p \cdot F(p) - f(0+)\\
+\mbox{2. Differentiationssatz:} & \sigma(t) \cdot -t \cdot f(t) & \laplace & \frac{d}{dp} F(p)\\
+\mbox{Integrationssatz:} & \sigma(t) \cdot \int_0^t f(\tau) d \tau & \laplace & \frac{1}{p} \cdot F(p)\\
+\mbox{Faltungssatz:} & \sigma(t) \cdot f_1(t) \star f_2(t) & \laplace & F_1(p) \cdot F_2(p)
+%\mbox{Endwertsätze:} & \lim_{t \to \infty} f(t) & = & \lim_{p \to 0} F(p)\\
+%\mbox{} & \lim_{t \to 0} f(t) & = & \lim_{p \to \infty} F(p)\\
+\end{array}
+\end{align*}
+
+\section{Höhere Ableitungen}
+\begin{align*}
+\begin{array}{lcl}
+f'(t) & \laplace & p \cdot F(p) - f(0+)\\
+f''(t) & \laplace & p^2 \cdot F(p) -p \cdot f(0+) - f'(0+)\\
+f'''(t) & \laplace & p^3 \cdot F(p) - p^2 \cdot f(0+) - p \cdot f'(0+) - f''(0+)\\
+\mbox{usw.} & {} & {}
+\end{array}
+\end{align*}
+
+\section{Korrespondenzen Laplacetransformation}
+\begin{align*}
+\begin{array}{rcll}
+	\sigma(t) \cdot 1 & \laplace & \frac{1}{p}; & \quad \mbox{Re}(p) > 0\\
+	\sigma(t) \cdot t^n & \laplace & \frac{n!}{p^{n+1}}; & \quad \mbox{Re}(p) > 0\\
+	\sigma(t) \cdot \frac{1}{p^n} & \Laplace & \frac{t^{n-1}}{(n-1)!}; & \quad \mbox{Re}(p) > 0\\
+	\sigma(t) \cdot \e^{at} & \laplace & \frac{1}{p-a}; & \quad \mbox{Re}(p) > \mbox{Re}(a)\\
+	\sigma(t) \cdot \delta(t) & \laplace & 1 & {}\\
+	\sigma(t) \cdot \cos(\omega t) & \laplace & \frac{p}{p^2 + \omega^2} & {}\\
+	\sigma(t) \cdot \sin(\omega t) & \laplace & \frac{\omega}{p^2 + \omega^2} & {}
+\end{array}
+\end{align*}
+
+\section{Weitere nützliche Formeln und Hinweise}
+\begin{align*}
+\begin{array}{lcl}
+\e^{j \varphi} + \e^{-j \varphi} & = & 2 \cos \varphi\\ 
+\e^{j \varphi} - \e^{-j \varphi} & = & 2 j \sin \varphi\\ 
+\end{array}
+\end{align*}
+
+Hinweise:\\
+\begin{itemize}
+	\item Finden sich im Nenner einer Funktion komplexe Nullstellen enthält deren Laplace-Transformierte auch trigonometrische Funktionen
+\end{itemize}

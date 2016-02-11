@@ -1,0 +1,84 @@
+\chapter{Fourier-Transformation}
+\section{Grundlagen}
+\subsection{Heaviside-Funktion $\sigma(t)$}
+\subsubsection{Definition}
+\begin{align}
+	\sigma(t) = \begin{cases}
+				1, & \text{für } t > 0\\
+				0, & \text{für } t < 0\\
+			\end{cases}\\
+	\sigma(0) = \text{beliebig} \nonumber
+\end{align}
+
+\subsubsection{Verwendung}
+\begin{align}
+	&\text{Einschalten}\\\nonumber
+	&f(t)\cdot\sigma(t-t_0)\\
+	&\text{Ausschalten}\\\nonumber
+	&f(t)\cdot\left[1-\sigma(t-t_0)\right]\\
+	&\text{Ein- und Ausschalten}\\\nonumber
+	&f(t)\cdot\left[\sigma(t-t_0) - \sigma(t-t_1)\right]
+\end{align}
+
+\subsection{$\delta$-Distribution}
+
+\subsubsection{Definition}
+\begin{align}
+	\delta(t) = \begin{cases}
+				0, & \text{für } t \neq 0\\
+				\infty, & \text{für } t = 0\\
+			\end{cases}\\
+	\int_{-\infty}^\infty\!\delta(t)\,\mathrm{d}t = 1 \nonumber
+\end{align}
+
+\subsubsection{Zusammenhang $\sigma(t)$ und $\delta(t)$}
+\begin{equation}
+	\dot{\sigma}(t) = \delta(t)
+\end{equation}
+
+\section{Grundlagen Fourierreihen}
+\input{content/chapters/Formelblatt_Fourierreihen}
+
+\section{Regeln zur Fouriertransformation}
+\input{content/chapters/Rechenregeln_Fourier}
+
+\subsection{Faltung}
+\subsubsection{Definition}
+\begin{equation}
+	f(t) * g(t) = \int_{-\infty}^{\infty}\!f(\tau) \cdot g(t-\tau) \, \mathrm{d}\tau 
+\end{equation}
+
+\clearpage
+
+\subsubsection{Berechnung}
+\begin{table}[h]
+	\begin{tabular}{ll}
+		Allgemeines Vorgehen & Beispiel $f(t) * g(t) $\\
+				     &$f(t)=\sigma(t)\cdot\e^{-t}$\\
+		       & $g(t) = \sigma(t+1) - \sigma(t-1)$\\
+		\toprule
+		1. Reihenfolge festlegen (mehr $\sigma \Rightarrow$ zuerst) & $g(t)*f(t)$\\
+									    &\\
+		2. Definition der Faltung übernehmen & $\int_{-\infty}^{\infty}\!g(\tau)\cdot f(t-\tau)\,\mathrm{d}\tau$\\
+						      &\\
+		3. Fallunterscheidung nach $\tau$ (wann werden die $\sigma=1$?) & $0 < \tau < 1$ \&  $\tau < t$\\
+										&\\
+		4. Fallunterscheidung nach t & $\begin{cases} 	1. & t < 0 \Rightarrow \int\dots = 0\\ 
+								2. & t \in \left[0;1\right] \Rightarrow \int_0^t\e^{-(t-\tau)}\mathrm{d}\tau\\
+								3. & t > 1 \Rightarrow \int_0^1\e^{-(t-\tau)}\mathrm{d}\tau
+						\end{cases}$\\
+						&\\
+		5. Integration & Integralbildung\\
+							   &\\
+		6. Zusammenfassung & $f(t) * g(t) = \begin{cases}
+							0, & t < 0\\
+						1-\e^{-t}, & 0 < t < 1\\
+						\e^{-t}(e-1), & t > 1
+						\end{cases}$\\
+	\end{tabular}
+	\caption{Vorgehen Faltung}
+	\label{tab:vorgehen_faltung}
+\end{table}
+
+\clearpage
+

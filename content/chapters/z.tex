@@ -1,0 +1,26 @@
+\chapter{z-Transformation}
+\input{content/chapters/Rechenregeln_z}
+
+\section{Am Beispiel $y_n - a^2 y_{n-2} = \delta_n$}
+
+\begin{align*}
+	y_n - a^2\cdot y_{n-2} = \delta_n \laplace Y(z) - a^2 \frac{1}{z^2}Y(z) = 1\\
+	\\
+	Y(z)\left(1-\frac{a^2}{z^2}\right) = 1\\
+	Y(z)\left(\frac{z^2-a^2}{z^2}\right) = 1\\
+	Y(z) = \frac{1}{\frac{z^2-a^2}{z^2}} = \frac{z^2}{z^2-a^2}\\
+	Y(z) = \frac{z^2-a^2+a^2}{z^2-a^2} = 1 + \frac{a^2}{z^2-a^2}\\
+	\\
+	\Rightarrow \text{Beginne Partialbruchzerlegung}\\
+	\\
+	\frac{a^2}{z^2-a^2} = \frac{A}{z-(-a)}+\frac{B}{z-a}\\
+	\Rightarrow A=\frac{-a}{2}\\
+	B=\frac{a}{2}\\
+	\\
+	\Leftarrow \text{Beende Partialbruchzerlegung}\\
+	\\
+	\Rightarrow Y(z) = 1-\frac{a}{2}\frac{1}{z-(-a)}+\frac{a}{2}\frac{1}{z-a}\\
+	Y(z) \Laplace y_n = \delta - \frac{a}{2}(-a)^{n-1}\sigma_{n-1}+\frac{a}{2}a^{n-1}\sigma_{n-1}\\
+	\\
+	y_n = \delta_n+\frac{1}{2}(-a)^n\sigma_{n-1}+\frac{1}{2}a^n\sigma_{n-1}
+\end{align*}

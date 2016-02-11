@@ -1,0 +1,82 @@
+\section{Formelblatt zur beschreibenden Statistik}
+
+\subsection{Arithmetisches Mittel}
+\begin{align*}
+\overline{x} = \frac{1}{n} \cdot \sum_{i=1}^{n} x_i
+\end{align*}
+
+\subsection{Empirische Varianz}
+\begin{align*}
+\begin{array}{ccl}
+s^2 &=& \frac{1}{n-1} \cdot \sum_{i=1}^{n} (x_i - \overline{x})^2\\
+\mbox{} &=& \frac{1}{n-1} \cdot ((\sum_{i=1}^{n} x_i^2) - n \cdot \overline{x}^2)
+\end{array}
+\end{align*}
+
+\subsection{Empirische Standardabweichung}
+\begin{align*}
+s = \sqrt{s^2}
+\end{align*}
+
+\subsection{Empirische Kovarianz}
+\begin{align*}
+\begin{array}{ccl}
+s_{xy} &=& \frac{1}{n-1} \cdot \sum_{i=1}^{n} (x_i-\overline{x})(y_i-\overline{y})\\
+\mbox{} &=& \frac{1}{n-1} \cdot (\sum_{i=1}^{n} (x_i \cdot y_i) - n \cdot \overline{x} \cdot \overline{y})\\
+\end{array}
+\end{align*}
+
+\subsection{Empirischer Korrelationskoeffizient}
+\begin{align*}
+r_{xy} = \frac{s_{xy}}{s_x \cdot s_y}
+\end{align*}
+
+\clearpage
+
+\section{Formelblatt zu den Verteilungen}
+
+\subsection{Diskrete Verteilungen}
+
+\subsubsection{Binomialverteilung}
+\begin{align*}
+\begin{array}{ll}
+\mbox{Diskrete Dichte:} & P(X=k) = {n \choose k} \cdot p^k \cdot (1-p)^{n-k} \\
+{} & {} \\
+\mbox{Erwartungswert:} & \mu = E(X) = n \cdot p \\
+{} & {} \\
+\mbox{Varianz:} & \sigma^2 = Var(X) = n \cdot p \cdot (1-p)
+\end{array}
+\end{align*}
+
+\subsubsection{Hypergeometrische Verteilung}
+\begin{align*}
+\begin{array}{ll}
+\mbox{Diskrete Dichte:} & P(X=k) = \frac{{M \choose k} \cdot {N-M \choose n-k}}{{N \choose n}} \\
+{} & {} \\
+\mbox{Erwartungswert:} & \mu = E(X) = n \cdot \frac{M}{N} \\
+{} & {} \\
+\mbox{Varianz:} & \sigma^2 = Var(X) = \frac{nM(N-M)(N-n)}{N^2(N-1)}
+\end{array}
+\end{align*}
+
+\subsubsection{Poissonverteilung}
+\begin{align*}
+\begin{array}{ll}
+\mbox{Diskrete Dichte:} & P(X=k) = \frac{\lambda^k}{k !} \cdot \e^{-\lambda}\\
+{} & {} \\
+\mbox{Erwartungswert:} & \mu = E(X) = \lambda \\
+{} & {} \\
+\mbox{Varianz:} & \sigma^2 = Var(X) =  \lambda
+\end{array}
+\end{align*}
+
+\subsection{Stetige Verteilung}
+
+\subsubsection{Normalverteilung}
+\begin{align*}
+\begin{array}{ll}
+\mbox{Dichte der Normalverteilung:} & f(x) = \frac{1}{\sqrt{2 \pi} \cdot \sigma} \cdot \e^{- \frac{(x-\mu)^2}{2 \sigma^2}}\\
+{} & {} \\
+\mbox{Dichte der Standard-Normalverteilung:} & \phi(z) = \frac{1}{\sqrt{2 \pi}} \cdot \e^{- \frac{z^2}{2}}\\
+\end{array}
+\end{align*}

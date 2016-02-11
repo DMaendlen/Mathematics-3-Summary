@@ -1,0 +1,74 @@
+\section{Tabellen für Vertrauensbereiche (auch: Konfidenzintervalle)}
+
+\subsection{Vertrauensbereiche für den Erwartungswert $\mu$ einer Normalverteilung bei bekannter Varianz $\sigma^2$}
+
+Die Voraussetzungen sind wie im Abschnitt A. bei den statistischen Tests.\\
+
+Der Vertrauensbereich wird auf Basis einer Stichprobe $x_1, \ldots , x_n$ berechnet, deren arithmetischer Mittelwert $\overline x$ ist.\\
+
+\begin{tabular}{ll} 
+Art des Vertrauensbereichs & Vertrauensbereich für $\mu$ \\
+	\toprule
+zweiseitig & $[\overline x - z_{1-\alpha /2} \cdot \frac{\sigma}{\sqrt{n}} ; \;
+\overline x + z_{1-\alpha /2} \cdot \frac{\sigma}{\sqrt{n}}]$ \\
+einseitig, nach unten begrenzt & $[\overline x - z_{1-\alpha} \cdot \frac{\sigma}{\sqrt{n}} ; \;
+\infty)$ \\
+einseitig, nach oben begrenzt & $(-\infty ; \; \overline x + z_{1-\alpha} \cdot \frac{\sigma}{\sqrt{n}}]$ 
+\end{tabular}
+
+\subsection{Vertrauensbereiche für den Erwartungswert $\mu$ einer Normalverteilung bei unbekannter Varianz}
+
+Die Voraussetzungen sind wie im Abschnitt B. bei den statistischen Tests.\\
+
+Der Vertrauensbereich wird auf Basis einer Stichprobe $x_1, \ldots , x_n$ berechnet, deren arithmetischer Mittelwert $\overline x$ und deren empirische Standardabweichung $s$ ist.\\
+
+\begin{tabular}{ll}
+Art des Vertrauensbereichs & Vertrauensbereich für $\mu$ \\
+	\toprule
+zweiseitig & $[\overline x - t_{n-1;1-\alpha /2} \cdot \frac{s}{\sqrt{n}} ; \;
+\overline x + t_{n-1;1-\alpha /2} \cdot \frac{s}{\sqrt{n}}]$ \\
+einseitig, nach unten begrenzt & $[\overline x - t_{n-1;1-\alpha} \cdot \frac{s}{\sqrt{n}} ; \;
+\infty)$ \\
+einseitig, nach oben begrenzt & $(-\infty ; \;
+\overline x + t_{n-1;1-\alpha} \cdot \frac{s}{\sqrt{n}}]$ 
+\end{tabular}
+
+\clearpage
+
+\subsection{Vertrauensbereiche für die Differenz $\mu_1 - \mu_2$ der Erwartungswerte zweier Normalverteilungen}
+
+Die Voraussetzungen sind wie im Abschnitt C. bei den statistischen Tests. Der Vertrauensbereich wird auf Basis zweier Stichproben $x_1, \ldots , x_m$ und $y_1, \ldots , y_n$ berechnet.\\
+
+Der arithmetische Mittelwert der ersten Stichprobe ist $\overline x$, der der zweiten ist $\overline y$.
+
+Aus den beiden empirischen Varianzen $s_x^2$ der ersten Stichprobe und $s_y^2$ der zweiten Stichprobe muss zunächst die folgende Hilfsgröße berechnet werden:
+
+\begin{align*}
+s_d = \sqrt{(m-1) s_{x}^2 + (n-1) s_{y}^2} \cdot \sqrt{\frac{m+n}{m \cdot n \cdot (m+n-2)}}
+\end{align*}
+
+
+
+\begin{tabular}{ll}
+Art des Vertrauensbereichs & Vertrauensbereich für $\mu_1 - \mu_2$ \\
+	\toprule
+zweiseitig & $[\overline x - \overline y - t_{m+n-2;1-\alpha /2} \cdot s_d ; \;
+\overline x - \overline y + t_{m+n-2;1-\alpha /2} \cdot s_d]$ \\
+einseitig, nach unten begrenzt & $[\overline x - \overline y - t_{m+n-2;1-\alpha} \cdot s_d ; \; \infty)$ \\
+einseitig, nach oben begrenzt  & $(-\infty ; \;
+\overline x - \overline y + t_{m+n-2;1-\alpha} \cdot s_d]$ 
+\end{tabular}
+
+\subsection{Vertrauensbereiche für eine Wahrscheinlichkeit $p \;$}
+
+Die Voraussetzungen sind wie im Abschnitt D. bei den statistischen Tests. 
+
+Der Vertrauensbereich wird auf Basis einer Stichprobe vom Umfang $n$ berechnet, bei der das gesuchte Ereignis $k$-mal eingetreten sei, Dann ist $\hat p = \frac{k}{n}$ eine Punktschätzung für die unbekannte Wahrscheinlichkeit. Dieser Schätzwert wird für den Vertrauensbereich benutzt.\\
+
+\begin{tabular}{ll}
+Art des Vertrauensbereichs & Vertrauensbereich für $p$ \\
+	\toprule
+zweiseitig & $[\hat p - z_{1-\alpha/2} \cdot \sqrt{\frac{\hat p \cdot (1- \hat p)}{n}} - \frac{0,5}{n}; \; \hat p + z_{1-\alpha/2} \cdot \sqrt{\frac{\hat p \cdot (1- \hat p)}{n}} + \frac{0,5}{n}]$ \\
+einseitig, nach unten begrenzt & $[\hat p - z_{1-\alpha} \cdot \sqrt{\frac{\hat p \cdot (1- \hat p)}{n}} - \frac{0,5}{n}; \; 1 ]$ \\
+einseitig, nach oben begrenzt & $[0 ; \; \hat p + z_{1-\alpha} \cdot \sqrt{\frac{\hat p \cdot (1- \hat p)}{n}} + \frac{0,5}{n}]$ 
+\end{tabular}

@@ -1,0 +1,61 @@
+\section{Beschreibende Statistik}
+
+\subsection{Arithmetisches Mittel}
+\begin{align*}
+\overline{x} = \frac{1}{n} \cdot \sum_{i=1}^{n} x_i
+\end{align*}
+
+\subsection{Empirische Varianz}
+\begin{align*}
+	s^2 &= \frac{1}{n-1} \cdot \sum_{i=1}^{n} \left(x_i - \overline{x}\right)^2\\
+	    &= \frac{1}{n-1} \cdot \left(\left(\sum_{i=1}^{n} x_i^2 \right) - n \cdot \overline{x}^2\right)
+\end{align*}
+
+\subsection{Empirische Standardabweichung}
+\begin{align*}
+	s = \sqrt{s^2} = \sqrt{\frac{1}{n-1} \cdot \sum_{i=1}^{n} (x_i - \overline{x})^2} = \sqrt{\frac{1}{n-1} \cdot ((\sum_{i=1}^{n} x_i^2) - n \cdot \overline{x}^2)}
+\end{align*}
+
+\subsection{Empirische Kovarianz}
+\begin{align*}
+	s_{xy} &= \frac{1}{n-1} \cdot \sum_{i=1}^{n} (x_i-\overline{x})(y_i-\overline{y})\\
+	&= \frac{1}{n-1} \cdot \left(\sum_{i=1}^{n} (x_i \cdot y_i) - n \cdot \overline{x} \cdot \overline{y}\right)\\
+\end{align*}
+
+Anwendungsbeispiel: Kovarianz von Gewicht und Haltbarkeit von Werkzeugen\\
+Ist das Vorzeichen negativ nimmt die Haltbarkeit mit steigendem Gewicht des Werkzeugs ab, ist es positiv nimmt sie zu.
+
+\subsection{Empirischer Korrelationskoeffizient}
+\begin{align*}
+	r_{xy} = \frac{s_{xy}}{s_x \cdot s_y}\\
+	-1 \leq r_{xy} \leq 1
+\end{align*}
+
+Für $|r_{xy}|\rightarrow 1$ gilt starke Abhängigkeit von $x$ und $y$, für $|r_{xy}|\rightarrow 0$ ist die Abhängigkeit schwach.
+
+\subsection{Regressionsgerade}
+\begin{align*}
+	Q(m,b) &= \sum_{i=1}^{n}\left[y_i-(mx_i+b)\right]^2=\text{Min!}\\
+	m &= \frac{s_{xy}}{s_x^2}\\
+	b &= \bar{y}-m\cdot\bar{x}
+\end{align*}
+
+Alternative Formel:
+
+\begin{align*}
+	y &= ax+b\\
+\\
+	a &= \frac{n \sum\limits_{i=1}^{n} x_i y_i - \left( \sum\limits_{i=1}^{n} x_i \right) \left( \sum\limits_{i=1}^{n} y_i \right)}
+		{n \sum\limits_{i=1}^{n} x_i^2 - \left( \sum\limits_{i=1}^{n} x_i \right)^2}\\
+\\
+	b &= \frac{\left( \sum\limits_{i=1}^{n} x_i^2 \right) \left( \sum\limits_{i=1}^{n} y_i \right)-
+		\left( \sum\limits_{i=1}^{n} x_i \right) \left( \sum\limits_{i=1}^{n} x_i y_i \right)}
+		{n \sum\limits_{i=1}^{n} x_i^2- \left( \sum\limits_{i=1}^{n} x_i \right)^2}
+\end{align*}
+
+\subsection{Median}
+Der Median ist die exakte Mitte einer geordneten Messreihe.
+
+\begin{equation*}
+	\tilde{x} = x_{0,5}
+\end{equation*}

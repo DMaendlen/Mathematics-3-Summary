@@ -1,0 +1,74 @@
+\subsection[Fourierreihe reell mit Periode $P=2\pi$]{Reelle Darstellung der Fourierreihe mit Periode $P=2 \pi$}
+\begin{align*}
+\begin{array}{rcll}
+f(x) & = & \frac{a_0}{2} + \sum_{k=1}^{\infty} \; (a_k \cos(k x) + b_k \sin(k x)) & {}\\
+\mbox{mit} & {} & {} & {}\\
+	a_k & = & \frac{1}{\pi} \int_{-\pi}^{\pi} \; f(x) \cos(k x) \mathrm{d}x & \qquad k \in \{1,2,3, \ldots \}\\ 
+	b_k & = & \frac{1}{\pi} \int_{-\pi}^{\pi} \; f(x) \sin(k x) \mathrm{d}x & \qquad k \in \{1,2,3, \ldots \}\\ 
+	\frac{a_0}{2} & = & \frac{1}{2 \pi} \int_{-\pi}^{\pi} \; f(x) \mathrm{d}x
+\end{array}
+\end{align*}
+\subsection[Fourierreihe reell mit Periode $T=\nicefrac{2\pi}{\omega}$]{Reelle Darstellung der Fourierreihe mit allgemeiner Periode $T=\nicefrac{2 \pi}{\omega}$}
+\begin{align*}
+\begin{array}{rcll}
+f(t) & = & \frac{a_0}{2} + \sum_{k=1}^{\infty} \; (a_k \cos(k \omega t) + b_k \sin(k \omega t))  & {}\\ 
+\mbox{mit} & {} & {} & {}\\
+	a_k & = & \frac{2}{T} \int_{-T/2}^{T/2} \; f(t) \cos(k \omega t) \mathrm{d}t & \qquad k \in \{1,2,3, \ldots \}\\ 
+	b_k & = & \frac{2}{T} \int_{-T/2}^{T/2} \; f(t) \sin(k \omega t) \mathrm{d}t & \qquad k \in \{1,2,3, \ldots \}\\ 
+	\frac{a_0}{2} & = & \frac{1}{T} \int_{-T/2}^{T/2} \; f(t) \mathrm{d}t
+\end{array}
+\end{align*}
+\subsection{Eigenschaften der reellen Fourierreihe}
+\begin{itemize}
+\item
+$f(t)$ achsensymmetrisch zur $y$-Achse (gerade) $\Rightarrow$ $b_k = 0$, für alle $k \in \{1,2,3, \ldots \}$\\ 
+$f(t)$ punktsymmetrisch zum Ursprung (ungerade) $\Rightarrow$ $a_k = 0$, für alle $k \in \{0,1,2,3, \ldots \}$\\
+$f(t)$ punktsymmetrisch zu einem Punkt auf der $y$-Achse $\Rightarrow$ $a_k = 0$ für alle $k \in \{1,2,3, \ldots \}$, aber $a_0 / 2 \ne 0$. 
+\item
+	Klingen die \glqq{}langsamsten\grqq{} Fourierkoeffizienten ab wie $\nicefrac{1}{k^2}$, so ist $f(t)$ stetig.\\
+	Klingen die \glqq{}langsamsten\grqq{} Fourierkoeffizienten ab wie $\nicefrac{1}{k}$, so hat $f(t)$ Sprungstellen.\\
+(Diese Eigenschaften gelten natürlich auch für die komplexe Darstellung der Fourierreihen.)
+\end{itemize}
+
+\subsection[Fourierreihe komplex mit Periode $P=2\pi$]{Komplexe Darstellung der Fourierreihe mit Periode $P=2 \pi$}
+\begin{align*}
+\begin{array}{rcll}
+f(x) & = & \sum_{k=-\infty}^{\infty} \; (c_k \cdot \e^{jkx}) & {}\\ 
+\mbox{mit} & {} & {} & {}\\
+	c_k & = & \frac{1}{2 \pi} \int_{-\pi}^{\pi} \; f(x) \cdot \e^{-jkx} \mathrm{d}x & \qquad k = 0,\pm 1,\pm 2,\pm 3, \ldots\\ 
+	c_0 & = & \frac{1}{2 \pi} \int_{-\pi}^{\pi} \; f(x) \mathrm{d}x
+\end{array}
+\end{align*}
+\subsection[Fourierreihe komplex mit Periode $T=\nicefrac{2\pi}{\omega}$]{Komplexe Darstellung der Fourierreihe mit allgemeiner Periode $T=\nicefrac{2 \pi}{\omega}$}
+\begin{align*}
+\begin{array}{rcll}
+f(t) & = & \sum_{k=-\infty}^{\infty} \; (c_k \cdot \e^{jk \omega t}) & {}\\ 
+\mbox{mit} & {} & {} & {}\\
+	c_k & = & \frac{1}{T} \int_{-T/2}^{T/2} \; f(t) \cdot \e^{-jk \omega t} \mathrm{d}t & \qquad k = 0,\pm 1,\pm 2,\pm 3, \ldots\\ 
+	c_0 & = & \frac{1}{T} \int_{-T/2}^{T/2} \; f(t) \mathrm{d}t
+\end{array}
+\end{align*}
+
+\newpage
+
+\noindent
+\subsection[Umrechnung reelle und komplexe Koeffizienten]{Umrechnungsformeln zwischen den reellen und den komplexen Koeffizienten}
+\begin{align*}
+\begin{array}{rcl}
+c_k & = & \frac{1}{2} ( a_k - j b_k)\\
+c_{-k} = c^{*}_{k} & = & \frac{1}{2} ( a_k + j b_k)\\
+c_0 & = & \frac{a_0}{2}\\
+a_k & = & 2 \Re(c_k)\\
+b_k & = & -2 \Im(c_k)
+\end{array}
+\end{align*}
+\subsection[Amplituden-, Phasenspektrum, Fourierkoeffizienten]{Beziehungen zwischen Amplituden-, Phasenspektrum und den Fourierkoeffizienten}
+
+\begin{align*}
+\begin{array}{rcl}
+A_k & = & \sqrt{a_{k}^{2} + b_{k}^{2}}\\
+\tan(\varphi_k) & = & - \frac{b_k}{a_k}\\
+|c_k| = |c_{-k}| & = & \frac{1}{2} A_k\\
+\varphi_k & = & \arg( c_k)
+\end{array}
+\end{align*}

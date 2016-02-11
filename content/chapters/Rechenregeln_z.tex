@@ -1,0 +1,26 @@
+\section{Regeln $z$-Transformation} 
+
+\begin{align*}
+\{ a_k \} \;\; \laplace \;\; \sum_{k=0}^{\infty} a_k \cdot z^{-k}
+\end{align*}
+
+\begin{align*}
+	\mbox{Verschiebungssatz:}\qquad \{ f_{k-n} \} \;\; \laplace \;\; z^{-n} \cdot F(z)
+\end{align*}
+
+\subsection{Korrespondenzen $z$-Transformation}
+\begin{align*}
+\begin{array}{rcc}
+	\{ \sigma_k \} & \laplace & \frac{z}{z-1}\\
+	\{ \delta_k \} & \laplace & 1\\
+	\{ a^k \cdot \sigma_k \} & \laplace & \frac{z}{z-a}
+\end{array}
+\end{align*}
+
+\subsection{Aus dem Verschiebungssatz folgende Korrespondenzen}
+\begin{align*}
+\begin{array}{rcll}
+\{ \sigma_{k-1} \} & \laplace & \frac{1}{z-1}\\
+\{ a^{k-1} \cdot \sigma_{k-1} \} & \laplace & \frac{1}{z-a}
+\end{array}
+\end{align*}

@@ -1,0 +1,51 @@
+\subsection{Fouriertransformation}
+\begin{align*}
+\begin{array}{lrcl}
+	S(f) & = & \int_{-\infty}^{\infty} \, s(t) \cdot \e^{-j 2 \pi ft} \mathrm{d}t\\ 
+	s(t) & = & \int_{-\infty}^{\infty} \, S(f) \cdot \e^{j 2 \pi ft} \mathrm{d}f\\ 
+\end{array}
+\end{align*}
+
+\subsection{Rechenregeln Fouriertransformation}
+
+\begin{align*}
+\begin{array}{lrcl}
+	\mbox{} & s(t) & \laplace & S(f)\\
+\mbox{Linearität:} & a_1 s_1(t) + a_2 s_2(t) & \laplace & a_1 S_1(f) + a_2 S_2(f) \\
+\mbox{Zeitverschiebungssatz:} & s(t-t_0) & \laplace & S(f) \cdot \e^{-j 2 \pi f t_0}\\
+\mbox{Vertauschungssatz:} & S(t) & \laplace & s(-f) \\
+\mbox{Symmetrie:} & s(-t) & \laplace & S(-f) \\
+\mbox{Frequenzverschiebungssatz:} & s(t) \cdot \e^{j 2 \pi f_0 t}  & \laplace & S(f-f_0) \\
+\mbox{Ähnlichkeitssatz:} & s(at) & \laplace & \frac{1}{|a|} \cdot S(\frac{f}{a})\\
+\mbox{Differentiation im Zeitbereich:} & \frac{d^n s}{\mathrm{d}t^n} & \laplace & (j 2 \pi f)^n \cdot S(f)\\
+\mbox{Differentiation im Frequenzbereich:} & (-j 2 \pi t)^n \cdot s(t) & \laplace & \frac{d^n S}{\mathrm{d}f^n}\\
+\mbox{Multiplikationssatz:} & t^n \cdot s(t) & \laplace & \frac{j^n}{(2 \pi)^n} \cdot \frac{d^n S}{\mathrm{d}f^n}\\
+\mbox{1. Faltungssatz:} & s_1(t) \star s_2(t) & \laplace & S_1(f) \cdot S_2(f)\\
+\mbox{2. Faltungssatz:} & s_1(t) \cdot s_2(t) & \laplace & S_1(f) \star S_2(f)\\
+\mbox{Integrationssatz:} & \int_{-\infty}^t s(\tau) d \tau & \laplace & \frac{1}{j 2 \pi f} \cdot S(f) + \frac{1}{2} S(0) \cdot \delta(f)\\
+\mbox{Parsevalsche Gleichung:} & \int_{-\infty}^{\infty} s^2(t) \mathrm{d}t & = & \int_{-\infty}^{\infty} |S(f)|^2 \mathrm{d}f\\
+\end{array}
+\end{align*}
+
+\subsection{Korrespondenzen Fouriertransformation}
+\begin{align*}
+\begin{array}{rcl}
+\delta(t) & \laplace & 1\\
+1 & \laplace & \delta(f)\\
+\sigma(t) & \laplace & \frac{1}{j 2 \pi f} + \frac{1}{2} \delta(f)\\
+\end{array}
+\end{align*}
+
+\subsection{Eigenschaften der Spektraldichte $S(f)$}
+$\mbox{}$\\
+Die Spektraldichte $S(f)$ einer geraden Zeitfunktion $s(t)$ ist reell und gerade.\\
+Die Spektraldichte $S(f)$ einer ungeraden Zeitfunktion $s(t)$ ist rein imaginär; der Imaginärteil $I(f)$ dieser Spektraldichte ist ungerade.
+$\mbox{}$\\
+
+\subsection[Fourierkoeffizienten, Fourierintegral, periodische Funktion]{Beziehung zwischen Fourierkoeffizienten und Fourierintegral beim Übergang zu einer periodischen Funktion}
+\begin{align*}
+\begin{array}{rcl}
+c_k & = & \frac{1}{T} \cdot S_0(k \cdot f_0)\\
+	c_0 & = & \frac{1}{T} \int_{-T/2}^{T/2} \, f(t) \mathrm{d}t
+\end{array}
+\end{align*}
